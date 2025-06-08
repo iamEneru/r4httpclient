@@ -181,6 +181,7 @@ int R4HttpClient::sendRequest(const String &method, const String &requestBody)
           if (chunkSize == 0) // end of chunks
           {
             state = END_RESPONSE;
+            this->body = chunkSizeStr;
             break;
           }
 
